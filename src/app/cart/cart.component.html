@@ -1,0 +1,17 @@
+<h3>Cart</h3>
+
+<div class="cart-item" *ngFor="let item of items">
+  <span>{{ item.name }}</span>
+  <span>{{ item.price | currency }}</span>
+</div>
+
+<button (click)="getShippingFee()">获取运送费</button>
+
+<div *ngIf = 'shippingCosts'>
+    <h3>Shipping Prices</h3>
+
+    <div class="shipping-item" *ngFor="let shipping of shippingCosts">
+    <span>{{ shipping.type }}</span>
+    <span>{{ shipping.price | currency }}</span>
+    </div>
+</div>
